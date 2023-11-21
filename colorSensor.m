@@ -2,7 +2,6 @@ brick.SetColorMode(1, 2);
 color = brick.ColorCode(1);
  %% red
      if(color == 5)
-       brick.beep;
        run('stop.m');
        pause(1);
        run('moveForward.m');
@@ -17,7 +16,9 @@ color = brick.ColorCode(1);
     end
 %% green
    if (color == 3)
-        brick.beep;
+        disp("green");
+        run('stop.m');
+        run('remotecontrol.m');
     end
 %% yellow
     if (color == 7)
