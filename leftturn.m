@@ -7,6 +7,10 @@ while 1
     disp(angle)
     if(angle <= -83)
         run('stop.m');
+        brick.GyroCalibrate(4);
+        if(angle == 0)
+            run('moveForward.m')
+        end
         break;
     end
 end
