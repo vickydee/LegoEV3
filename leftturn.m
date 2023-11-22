@@ -7,6 +7,8 @@ while 1
     disp(angle)
     if(angle <= -83)
         run('stop.m');
+        %%will test at home v
+        %%brick.GyroCalibrate(4)
         break;
     end
 end
