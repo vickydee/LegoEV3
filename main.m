@@ -1,4 +1,5 @@
 stoppedBlue = 0;
+stoppedGreen = 0;
 
 while 1
 %% Initializing variables in  loop to constantly update the values
@@ -31,14 +32,18 @@ while 1
 %% green
    if (color == 3)
        disp("green");
-       if  (stoppedBlue == 1)
+       if (stoppedBlue == 1)
         run('stop.m');
         run('remotecontrol.m');
+        stoppedGreen = 1;
        end
     end
 %% yellow
     if (color == 7)
-        brick.beep;
+        if (stoppedGreen == 1)
+            disp("yellow");
+            run('stop.m');
+        end
     end
 
 
