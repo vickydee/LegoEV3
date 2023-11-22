@@ -9,11 +9,11 @@ while 1
   % touch
     touch1 = brick.TouchPressed(3); 
 
-  % color
+  %% color
     brick.SetColorMode(1, 2);
     color = brick.ColorCode(1);
 
- %% red
+    % red
      if(color == 5)
        run('stop.m');
        pause(1);
@@ -21,7 +21,7 @@ while 1
        pause(1.7);
      end
 
-%% blue
+    % blue
     if(color == 2)
         stoppedBlue = 1;
         disp(stoppedBlue)
@@ -29,8 +29,9 @@ while 1
         run('stop.m');
         run('remotecontrol.m');
     end
-%% green
-   if (color == 3)
+    
+    % green
+    if (color == 3)
        disp("green");
        if (stoppedBlue == 1)
         run('stop.m');
@@ -38,7 +39,8 @@ while 1
         stoppedGreen = 1;
        end
     end
-%% yellow
+    
+    % yellow
     if (color == 7)
         if (stoppedGreen == 1)
             disp("yellow");
@@ -47,7 +49,7 @@ while 1
     end
 
 
-% Moves forward
+%% Moves forward
     run('moveForward.m')
 
     %left turn
