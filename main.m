@@ -22,7 +22,7 @@ while 1
      end
 
     % blue
-    if(color == 2)
+    if(color == 2 && stoppedBlue == 0)
         stoppedBlue = 1;
         disp(stoppedBlue)
         disp("blue");
@@ -31,7 +31,7 @@ while 1
     end
     
     % green
-    if (color == 3)
+    if (color == 3 && stoppedGreen == 0)
        disp("green");
        if (stoppedBlue == 1)
         run('stop.m');
@@ -52,7 +52,7 @@ while 1
 %% Moves forward
     run('moveForward.m')
 
-    %left turn
+ %left turn
     if dist >= 40
         run('leftturn.m')
         run('moveForward.m')
@@ -60,7 +60,7 @@ while 1
     end
     
 
-    %right
+ %right
      if (touch1 == true)
          run('rightturn.m')
      end
