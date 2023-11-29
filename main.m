@@ -15,7 +15,8 @@ while 1
 
     % red
      if(color == 5)
-       run('stop.m');
+       disp("red");
+       brick.StopMotor('AB','Brake');
        pause(1);
        run('moveForward.m');
        pause(1.7);
@@ -42,10 +43,12 @@ while 1
     
     % yellow
     if (color == 7)
-        if (stoppedGreen == 1)
-            disp("yellow");
-            run('stop.m');
-        end
+        disp("yellow");
+    end
+    if (color == 7 && stoppedGreen == 1)
+        disp("yellow");
+        brick.StopMotor('AB','Brake');
+        break;
     end
 
 
@@ -53,7 +56,7 @@ while 1
     run('moveForward.m')
 
  %left turn
-    if dist >= 40
+    if dist >= 50
         run('leftturn.m')
         run('moveForward.m')
         pause(1);

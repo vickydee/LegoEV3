@@ -1,12 +1,14 @@
-run('stop.m'); pause(1); brick.GyroCalibrate(4);
+brick.StopMotor('AB', 'Brake');
+pause(2); 
+brick.GyroCalibrate(4);
 
 while 1
     angle = brick.GyroAngle(4);
     brick.MoveMotor('A',-100);
     brick.MoveMotor('B',100);
     disp(angle)
-    if(angle >= 83)
-        run('stop.m');
+    if(angle >= 80)
+        brick.StopMotor('AB','Brake');
         break;
     end
 end
