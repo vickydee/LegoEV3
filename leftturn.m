@@ -1,4 +1,3 @@
-pause(0.7);
 brick.StopMotor('AB', 'Brake');
 pause(2); 
 brick.GyroCalibrate(4);
